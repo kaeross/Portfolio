@@ -40,15 +40,21 @@ var quoteBox = [
 		year: 
 	},
 	{
-		quote:  "Don't cry because it's over, smile because it happened.", 
-		source: "Dr Seuss",
-		citation: "https://www.goodreads.com/quotes",
+		quote:  "I just love bossy women. I could be around them all day. To me, bossy is not a pejorative term at all. It means somebody’s passionate and engaged and ambitious and doesn’t mind learning.", 
+		source: "Amy Poehler",
+		citation: "http://stylecaster.com/beauty/strong-women-quotes/#ixzz4hwmNVGOm",
 		year: 
 	},
 	{
-		quote:  "Don't cry because it's over, smile because it happened.", 
-		source: "Dr Seuss",
-		citation: "https://www.goodreads.com/quotes",
+		quote:  "Stop wearing your wishbone where your backbone ought to be.",
+		source: "Elizabeth Gilbert",
+		citation: "http://stylecaster.com/beauty/strong-women-quotes/#ixzz4hwmiY9AB",
+		year: 
+	},
+		{
+		quote:  "You take your life in your own hands, and what happens? A terrible thing: no one to blame",
+		source: "Erica Jong",
+		citation: "http://stylecaster.com/beauty/strong-women-quotes/#ixzz4hwn18vqR",
 		year: 
 	},
 
