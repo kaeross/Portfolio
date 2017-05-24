@@ -97,8 +97,6 @@ var uniqueRandom = function makeUniqueRandom() {
 	    return val;
 }
 
-console.log(uniqueRandom());
-
 
 function getRandomQuote() {
 	var i = uniqueRandom();
@@ -116,22 +114,32 @@ function getRandomQuote() {
 	}
 }
 
-console.log(getRandomQuote());
-
 	//return randomly quoted object
 
 //printQuote function
+
+
+function printQuote() {
+
 	//call getRandomQuote
 		//store object in variable
+	var randomQuote = getRandomQuote();
+
+
 	//return randomlyquoted object 
-<p class="quote"> [quote here] </p>
-<p class="source"> [source here]
-  <span class="citation"> [citation here] </span>
-  <span class="year"> [year here] </span>
-</p>
+// <p class="quote"> [quote here] </p>
+// <p class="source"> [source here]
+//   <span class="citation"> [citation here] </span>
+//   <span class="year"> [year here] </span>
+// </p>
 	//only citation if available
 	//only year if available
 
 //printQuote display to page:
-document.getElementById('quote-box').innerHTML 
+document.getElementById('quote-box').innerHTML = '<p class="quote">';
+document.getElementById('quote-box').innerHTML += randomQuote.quote;
+document.getElementById('quote-box').innerHTML += '</p>';
+
+}
+
 
