@@ -3,7 +3,7 @@
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 //change color of page
-
+//generate random color
 
 
 //quotes array
@@ -48,7 +48,7 @@ var quotes = [
 		quote:  "I just love bossy women. I could be around them all day. To me, bossy is not a pejorative term at all. It means somebody’s passionate and engaged and ambitious and doesn’t mind learning.", 
 		source: "Amy Poehler",
 		citation: "http://stylecaster.com/beauty/strong-women-quotes/#ixzz4hwmNVGOm",
-		year: "",
+		year: "2011",
 		tags: ""
 	},
 	{
@@ -137,7 +137,16 @@ function printQuote() {
 
 //printQuote display to page:
 document.getElementById('quote-box').innerHTML = '<p class="quote">' + randomQuote.quote + '</p>';
-// document.getElementById('quote-box').innerHTML += randomQuote.quote;
+document.getElementById('quote-box').innerHTML += '<p class="source">' + randomQuote.source + '</p>';
+document.getElementById('quote-box').innerHTML += '<span class="citation">' + randomQuote.citation + '</p>';
+if (randomQuote.year != "") {
+	document.getElementById('quote-box').innerHTML += '<span class="year">' + randomQuote.year + '</p>';
+	if(randomQuote.tags != "") {
+		document.getElementById('quote-box').innerHTML += '<span class="tags">' + randomQuote.tags + '</p>';
+		}
+	} else if(randomQuote.tags != "") {
+	document.getElementById('quote-box').innerHTML += '<span class="tags">' + randomQuote.tags + '</p>';
+	}
 // document.getElementById('quote-box').innerHTML += '</p>';
 
 }
