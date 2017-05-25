@@ -6,9 +6,10 @@ document.getElementById('loadQuote').addEventListener("click", printQuote, false
 // Random Color Generator 
 
 function randomColor() {
-	var red = Math.floor(Math.random() * 255);
-	var green = Math.floor(Math.random() * 255);
-	var blue = Math.floor(Math.random() * 255);
+	//not * 250 as do not want colors too light with dark text
+	var red = Math.floor(Math.random() * 225);
+	var green = Math.floor(Math.random() * 225);
+	var blue = Math.floor(Math.random() * 225);
 
 function insertRandomColor() {
 	document.body.style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
@@ -29,14 +30,14 @@ var quotes = [
 		source: "Dr Seuss",
 		citation: "https://www.goodreads.com/quotes",
 		year: "",
-		tags: ""
+		tags: ["inspiration", " emotion"]
 	},
 	{
 		quote:  "I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.", 
 		source: "Marilyn Monroe",
 		citation: "https://www.goodreads.com/quotes",
 		year: "",
-		tags: ["attributed-no-source", "best", "life", "love", "mistakes", "out-of-control", "truth", "worst"]
+		tags: ["attributed-no-source", " best", " life", " love", " mistakes", " out-of-control", " truth", " worst"]
 	},
 	{
 		quote:  "You only live once, but if you do it right, once is enough.", 
@@ -64,7 +65,7 @@ var quotes = [
 		source: "Amy Poehler",
 		citation: "http://stylecaster.com/beauty/strong-women-quotes/#ixzz4hwmNVGOm",
 		year: "2011",
-		tags: ""
+		tags: ["feminism, women, inspiration"]
 	},
 	{
 		quote:  "Stop wearing your wishbone where your backbone ought to be.",
@@ -134,9 +135,10 @@ function getRandomQuote() {
 //printQuote function
 
 
-function printQuote() {
+function writeQuote() {
 
 	var randomQuote = getRandomQuote();
+	console.log(randomQuote);
 
 //printQuote display to page:
 randomColor();
@@ -146,12 +148,14 @@ document.getElementById('quote-box').innerHTML += '<span class="citation">' + ra
 if (randomQuote.year != "") {
 	document.getElementById('quote-box').innerHTML += '<span class="year">' + randomQuote.year + '</p>';
 	if(randomQuote.tags != "") {
-		document.getElementById('quote-box').innerHTML += '<span class="tags">' + randomQuote.tags + '</p>';
+		document.getElementById('quote-box').innerHTML += '<span class="tags">Tags: ' + randomQuote.tags + '</p>';
 		}
 	} else if(randomQuote.tags != "") {
-	document.getElementById('quote-box').innerHTML += '<span class="tags">' + randomQuote.tags + '</p>';
+	document.getElementById('quote-box').innerHTML += '<span class="tags">Tags: ' + randomQuote.tags + '</p>';
 	}
 
 }
 
-
+function printQuote() {
+	var writeQuotes = setInterval(function(){ writeQuote() }, 30000);
+}
