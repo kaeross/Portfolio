@@ -2,20 +2,23 @@
 // when user clicks anywhere on the button, the "printQuote" function is called
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
-//change color of page
-//generate random color
-var red;
-var green;
-var blue; 
+
+// Random Color Generator 
 
 function randomColor() {
-	red = Math.floor(Math.random() * 255);
-	green = Math.floor(Math.random() * 255);
-	blue = Math.floor(Math.random() * 255);
-//"background-color: rgb(" + red + "," + green + "," + blue + ");"
+	var red = Math.floor(Math.random() * 255);
+	var green = Math.floor(Math.random() * 255);
+	var blue = Math.floor(Math.random() * 255);
 
-console.log("background-color: rgb(" + red + "," + green + "," + blue + ");" );
+function insertRandomColor() {
+	document.body.style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
+	document.getElementById("loadQuote").style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
 }
+
+insertRandomColor();
+
+}
+
 
 
 //quotes array
@@ -133,21 +136,10 @@ function getRandomQuote() {
 
 function printQuote() {
 
-	//call getRandomQuote
-		//store object in variable
 	var randomQuote = getRandomQuote();
 
-
-	//return randomlyquoted object 
-// <p class="quote"> [quote here] </p>
-// <p class="source"> [source here]
-//   <span class="citation"> [citation here] </span>
-//   <span class="year"> [year here] </span>
-// </p>
-	//only citation if available
-	//only year if available
-
 //printQuote display to page:
+randomColor();
 document.getElementById('quote-box').innerHTML = '<p class="quote">' + randomQuote.quote + '</p>';
 document.getElementById('quote-box').innerHTML += '<p class="source">' + randomQuote.source + '</p>';
 document.getElementById('quote-box').innerHTML += '<span class="citation">' + randomQuote.citation + '</p>';
@@ -159,7 +151,6 @@ if (randomQuote.year != "") {
 	} else if(randomQuote.tags != "") {
 	document.getElementById('quote-box').innerHTML += '<span class="tags">' + randomQuote.tags + '</p>';
 	}
-// document.getElementById('quote-box').innerHTML += '</p>';
 
 }
 
