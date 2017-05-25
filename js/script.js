@@ -158,4 +158,6 @@ if (randomQuote.year != "") {
 
 function printQuote() {
 	var writeQuotes = setInterval(function(){ writeQuote() }, 30000);
+	console.log(writeQuote());
+	return writeQuotes;
 }
