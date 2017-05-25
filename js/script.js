@@ -4,6 +4,18 @@ document.getElementById('loadQuote').addEventListener("click", printQuote, false
 
 //change color of page
 //generate random color
+var red;
+var green;
+var blue; 
+
+function randomColor() {
+	red = Math.floor(Math.random() * 255);
+	green = Math.floor(Math.random() * 255);
+	blue = Math.floor(Math.random() * 255);
+//"background-color: rgb(" + red + "," + green + "," + blue + ");"
+
+console.log("background-color: rgb(" + red + "," + green + "," + blue + ");" );
+}
 
 
 //quotes array
