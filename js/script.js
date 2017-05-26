@@ -5,13 +5,13 @@ document.getElementById('loadQuote').addEventListener("click", printQuote, false
 
 // Random Color Generator 
 
-function randomColor() {
+const randomColor = () => {
 	//not * 250 as do not want colors too light with dark text
-	var red = Math.floor(Math.random() * 225);
-	var green = Math.floor(Math.random() * 225);
-	var blue = Math.floor(Math.random() * 225);
+	const red = Math.floor(Math.random() * 225);
+	const green = Math.floor(Math.random() * 225);
+	const blue = Math.floor(Math.random() * 225);
 
-function insertRandomColor() {
+const insertRandomColor = () => {
 	document.body.style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
 	document.getElementById("loadQuote").style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
 }
@@ -21,9 +21,8 @@ insertRandomColor();
 }
 
 
-
 //quotes array
-var quotes = [
+const quotes = [
 
 	{
 		quote:  "Don't cry because it's over, smile because it happened.", 
@@ -85,27 +84,27 @@ var quotes = [
 ];
 
 //define array variables
-var quote;
-var source;
-var citation;
-var year;
-var tags;
+let quote;
+let source;
+let citation;
+let year;
+let tags;
 
 
 //getRandomQuote
 	//select random quote from array
 
-var uniqueRandoms = [];
-var numRandoms = quotes.length;
-var uniqueRandom = function makeUniqueRandom() {
+let uniqueRandoms = [];
+const numRandoms = quotes.length;
+const uniqueRandom = () => {
     // refill the array if needed
     if (!uniqueRandoms.length) {
-        for (var i = 0; i < numRandoms; i+=1) {
+        for (let i = 0; i < numRandoms; i+=1) {
             uniqueRandoms.push(i);
         }
     }
-    var index = Math.floor(Math.random() * uniqueRandoms.length);
-    var val = uniqueRandoms[index];
+    const index = Math.floor(Math.random() * uniqueRandoms.length);
+    const val = uniqueRandoms[index];
 
     // now remove that value from the array
     uniqueRandoms.splice(index, 1);
@@ -114,8 +113,8 @@ var uniqueRandom = function makeUniqueRandom() {
 }
 
 
-function getRandomQuote() {
-	var i = uniqueRandom();
+const getRandomQuote = () => {
+	const i = uniqueRandom();
 		quote = quotes[i].quote;
 		source = quotes[i].source;
 		citation = quotes[i].citation;
@@ -135,9 +134,9 @@ function getRandomQuote() {
 //printQuote function
 
 
-function writeQuote() {
+const writeQuote = () => {
 
-	var randomQuote = getRandomQuote();
+	const randomQuote = getRandomQuote();
 	console.log(randomQuote);
 
 //printQuote display to page:
@@ -157,7 +156,7 @@ if (randomQuote.year != "") {
 }
 
 function printQuote() {
-	var writeQuotes = setInterval(function(){ writeQuote() }, 30000);
+	const writeQuotes = setInterval(function(){ writeQuote() }, 30000);
 	console.log(writeQuote());
 	return writeQuotes;
 }
