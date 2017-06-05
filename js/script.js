@@ -139,18 +139,20 @@ const writeQuote = () => {
 	const randomQuote = getRandomQuote();
 	console.log(randomQuote);
 
+	let quoteBox = document.getElementById('quote-box').innerHTML;
+
 //printQuote display to page:
 randomColor();
-document.getElementById('quote-box').innerHTML = '<p class="quote">' + randomQuote.quote + '</p>';
-document.getElementById('quote-box').innerHTML += '<p class="source">' + randomQuote.source + '</p>';
-document.getElementById('quote-box').innerHTML += '<span class="citation">' + randomQuote.citation + '</p>';
+quoteBox = '<p class="quote">' + randomQuote.quote + '</p>';
+quoteBox += '<p class="source">' + randomQuote.source + '</p>';
+quoteBox += '<span class="citation">' + randomQuote.citation + '</p>';
 if (randomQuote.year != "") {
-	document.getElementById('quote-box').innerHTML += '<span class="year">' + randomQuote.year + '</p>';
+	quoteBox += '<span class="year">' + randomQuote.year + '</p>';
 	if(randomQuote.tags != "") {
-		document.getElementById('quote-box').innerHTML += '<span class="tags">Tags: ' + randomQuote.tags + '</p>';
+		quoteBox += '<span class="tags">Tags: ' + randomQuote.tags + '</p>';
 		}
 	} else if(randomQuote.tags != "") {
-	document.getElementById('quote-box').innerHTML += '<span class="tags">Tags: ' + randomQuote.tags + '</p>';
+	quoteBox += '<span class="tags">Tags: ' + randomQuote.tags + '</p>';
 	}
 
 }
